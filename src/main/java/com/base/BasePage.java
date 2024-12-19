@@ -1,4 +1,4 @@
-package com.saucedemo.pages;
+package com.base;
 
 // it has only one role to be parent of all page objects
 // this can be made abstract as well to avoid instances of this class
@@ -27,5 +27,14 @@ public class BasePage {
 
     protected void click(By locator){
         find(locator).click();
+    }
+
+    public static void delay(int milliseconds){
+        try{
+            Thread.sleep(milliseconds);
+        }
+        catch(InterruptedException exc){
+            exc.printStackTrace();
+        }
     }
 }
